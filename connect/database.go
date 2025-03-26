@@ -10,35 +10,40 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func DB() {
-	// MongoDB connection URI
-    uri := "mongodb+srv://chetanbudathoki:HeroBudathoki3579@chetanbudathoki.ko2ln.mongodb.net/cb?retryWrites=true&w=majority&appName=chetanbudathoki"
+var client *mongo.Client
+var members *mongo.Collection
+var err error
 
-    // Set up MongoDB client options
-    clientOptions := options.Client().ApplyURI(uri)
+// DB initializes the MongoDB connection and returns the client and collection
+func DB() (*mongo.Client, *mongo.Collection) {
+	if client == nil {
+		// MongoDB connection URI
+		uri := "mongodb+srv://chetanbudathoki:HeroBudathoki3579@chetanbudathoki.ko2ln.mongodb.net/cb?retryWrites=true&w=majority&appName=chetanbudathoki"
 
-    // Connect to MongoDB
-    ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-    defer cancel()
+		// Set up MongoDB client options
+		clientOptions := options.Client().ApplyURI(uri)
 
-    client, err := mongo.Connect(ctx, clientOptions)
-    if err != nil {
-        log.Fatalf("Failed to connect to MongoDB: %v", err)
-    }
+		// Connect to MongoDB
+		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+		defer cancel()
 
-    // Ping the database to verify the connection
-    err = client.Ping(ctx, nil)
-    if err != nil {
-        log.Fatalf("Failed to ping MongoDB: %v", err)
-    }
+		client, err = mongo.Connect(ctx, clientOptions)
+		if err != nil {
+			log.Fatalf("Failed to connect to MongoDB: %v", err)
+		}
 
-    fmt.Println("Successfully connected to MongoDB!")
+		// Ping the database to verify the connection
+		err = client.Ping(ctx, nil)
+		if err != nil {
+			log.Fatalf("Failed to ping MongoDB: %v", err)
+		}
 
-    // Close the connection when done
-    defer func() {
-        if err = client.Disconnect(ctx); err != nil {
-            log.Fatalf("Failed to disconnect from MongoDB: %v", err)
-        }
-        fmt.Println("Disconnected from MongoDB.")
-    }()
+		fmt.Println("Successfully connected to MongoDB!")
+
+		// Set the MongoDB collection
+		members = client.Database("cb").Collection("members")
+	}
+
+	// Return the client and collection for use in other parts of the app
+	return client, members
 }

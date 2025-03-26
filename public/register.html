@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">	
+	
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+	<link rel="stylesheet" href="/static/css/dark.css" type="text/css">
+	<link rel="stylesheet" href="/static/css/font-icons.css" type="text/css">
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css">
+	<link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css">	
+	<link rel="stylesheet" href="/static/css/custom.css" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="images/favicon.png" />
+	
+	<meta property="og:title" content="Youth Congress Nepal | Young Democrats, Together for Nepal">
+	<meta property="og:description" content="Youth Congress Nepal is the movement to consolidate democracy. We believe in a politically liberal democracy, socially just and inclusive democracy, and we advocate for a well regulated and competitive economy.">
+	<meta property="og:image" content="http://youthcongressnepal.org/images/Youth-Congress-Nepal.jpg">
+	<meta property="og:url" content="http://youthcongressnepal.org">
+	
+	<meta name="twitter:title" content="Youth Congress Nepal | Young Democrats, Together for Nepal">
+	<meta name="twitter:description" content=" Youth Congress Nepal is the movement to consolidate democracy. ">
+	<meta name="twitter:image" content=" http://youthcongressnepal.org/images/Youth-Congress-Nepal.jpg ">
+	
+	<title>Youth Congress Nepal | Registration</title>
+	
+	<meta name="description" content="Youth Congress Nepal is the movement to consolidate democracy. We believe in a politically liberal democracy, socially just and inclusive democracy, and we advocate for a well regulated and competitive economy.">
+
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="stretched">
+
+	<div id="wrapper" class="clearfix">
+
+		
+		{{ template "header" . }}
+		
+		<section id="page-title">
+			<div class="container clearfix">
+				<h1>Registration</h1>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/">Home</a></li>					
+					<li class="breadcrumb-item active" aria-current="page">Registration</li>
+				</ol>
+			</div>
+		</section>
+		
+		<section id="content">
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Be a part of Youth Congress Nepal. Register Now.</h3>							
+
+							<form id="register-form" name="register-form" class="row" action="/register" method="post">
+
+								<div class="col-12 form-group"> 
+									<label for="firstname">First Name:</label>
+									<input type="text" id="firstname" name="firstname" class="form-control" required>
+								</div>
+							
+								<div class="col-12 form-group">
+									<label for="lastname">Last Name:</label>
+									<input type="text" id="lastname" name="lastname" class="form-control" required>
+								</div>
+								
+								<div class="col-12 form-group">
+									<label for="username">Username:</label>
+									<input type="text" id="username" name="username" class="form-control" required>									
+								</div>	
+															
+								<div class="col-12 form-group">
+									<label for="email">Email Address:</label>
+									<input type="email" id="email" name="email" class="form-control" required>										
+								</div>						
+														
+								<div class="col-12 form-group">
+									<label for="mobile">Mobile Number:</label>
+									<input type="text" id="mobile" name="mobile" class="form-control" required>									
+								</div>
+
+								<div class="col-12 form-group">
+									<label for="password">Password:</label>
+									<input type="text" id="password" name="password" class="form-control" required>									
+								</div>
+
+								<div class="col-8 col-lg-auto">
+									<button type="submit" class="button button-reveal button-large button-circle text-right">
+										<i class="icon-angle-right"></i>
+										<span>Submit your registration form</span>
+									</button>
+								</div>							
+							</form>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		{{ template "footer" . }}	
+
+	</div>
+	
+	<div id="gotoTop" class="icon-angle-up"></div>	
+
+    <div id="gotoTop" class="icon-angle-up"></div>
+	
+	<script src="/static/js/jquery.js"></script>
+	<script src="/static/js/plugins.min.js"></script>
+	<script src="/static/js/functions.js"></script>
+	
+
+</body>
+</html>

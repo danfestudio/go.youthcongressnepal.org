@@ -16,6 +16,7 @@ func StartServer() {
 	Routes(app)
 
 	app.Static("/static", "./static")
+	app.Static("/assets", "./assets")	
 	
 	// Start the server
 	app.Listen(":3000")
