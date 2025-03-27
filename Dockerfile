@@ -25,5 +25,4 @@ RUN ./devcontainer/setup.sh
 # Expose the port your application will use (adjust if needed)
 EXPOSE 8080
 
-# Command to run the Go application
 CMD ["go", "run", "main.go"]
