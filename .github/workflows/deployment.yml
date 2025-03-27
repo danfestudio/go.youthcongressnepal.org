@@ -26,6 +26,6 @@ jobs:
         port: 22  
 
         script: |
-          cd /home/cb/project/danfelabs/youthcongressnepal
+          cd /home/cb/projects/danfelabs/youthcongressnepal
           docker-compose down || true
           docker-compose up -d --build
