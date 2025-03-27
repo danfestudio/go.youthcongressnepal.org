@@ -55,7 +55,11 @@
 				<div class="container clearfix">
 					<div class="row">
 						<div class="col-md-8">
-							<h3>Be a part of Youth Congress Nepal. Register Now.</h3>							
+							
+
+							{{if not .otpForm}}
+
+							<h3>Be a part of Youth Congress Nepal. Register Now.</h3>
 
 							<form id="register-form" name="register-form" class="row" action="/register" method="post">
 
@@ -181,6 +185,22 @@
 								</div>							
 							</form>
 
+							{{else}}
+
+							<h3>Mobile Number Verification.</h3>
+
+							<form method="POST" action="/register">
+								<div class="col-12 form-group"> 
+									<label for="otp">OTP:</label>
+									<input type="text" id="otp" name="otp" class="form-control" required>
+									<button type="submit" class="button button-reveal button-large button-circle text-right">
+										<i class="icon-angle-right"></i>
+										<span>Submit your OTP</span>
+									</button>
+								</div>
+							</form>
+
+							{{end}}
 						</div>
 					</div>
 				</div>
