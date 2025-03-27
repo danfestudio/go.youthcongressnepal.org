@@ -54,7 +54,7 @@
 
 				<div class="container clearfix">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-8">
 							<h3>Be a part of Youth Congress Nepal. Register Now.</h3>							
 
 							<form id="register-form" name="register-form" class="row" action="/register" method="post">
@@ -69,7 +69,7 @@
 									<input type="text" id="lastname" name="lastname" class="form-control" required>
 								</div>
 								
-								<div class="col-12 form-group">
+								<div class="col-12 form-group"><p>Hello</p>
 									<label for="username">Username:</label>
 									<input type="text" id="username" name="username" class="form-control" required>									
 								</div>	
@@ -86,8 +86,92 @@
 
 								<div class="col-12 form-group">
 									<label for="password">Password:</label>
-									<input type="text" id="password" name="password" class="form-control" required>									
+									<input type="password" id="password" name="password" class="form-control" required>									
 								</div>
+
+								<div class="col-12 form-group">
+									<label for="confirm_password">Re-enter Password:</label>
+									<input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
+									<span id="password_error" style="color:red; display:none;">Passwords do not match</span>
+								</div>
+
+								<div class="divider divider-border divider-center"><i class="icon-location"></i></div>
+
+									<!-- Permanent Address -->
+									<div class="col-12 form-group center">
+										<label for="">Permanent Location:</label>                                    
+									</div>
+									
+									<!-- Permanent District Dropdown -->
+									<div class="col-12 form-group">
+										<label for="district">District:</label>
+										<select id="p_district" name="p_district" class="form-control">
+											<option value="" selected>Select your district</option>                                                
+										</select>
+									</div>
+									
+									<!-- Permanent Palika Dropdown -->
+									<div class="col-12 form-group">
+										<label for="palika">Palika:</label>
+										<select id="p_palika" name="p_palika" class="form-control">
+											<option value="" selected>Select your palika</option>
+										</select>
+									</div>
+									
+									<!-- Permanent Ward Dropdown -->
+									<div class="col-12 form-group">
+										<label for="wada">Ward Number:</label>
+										<select id="p_wada" name="p_wada" class="form-control">
+											<option value="" selected>Select your ward</option>
+										</select>
+									</div>
+									
+									<!-- Permanent Tole Input -->
+									<div class="col-12 form-group">
+										<label for="p_tole">Tole:</label>
+										<input type="text" id="p_tole" name="p_tole" class="form-control" placeholder="Your tole">
+									</div>
+									
+									<div class="divider divider-sm divider-rounded divider-center"><i class="icon-location"></i></div>
+									
+									<!-- Temporary Location -->
+									<div class="col-12 form-group center">
+										<label for="">Temporary Location:</label>
+										<p>You can skip temporary location, if you are currently staying in your permanent</p>                                
+									</div>
+									
+									<!-- Temporary District Dropdown -->
+									<div class="col-12 form-group">
+										<label for="district">District:</label>
+										<select id="t_district" name="t_district" class="form-control">
+											<option value="" selected>Select your district</option>
+										</select>
+									</div>
+									
+									<!-- Temporary Palika Dropdown -->
+									<div class="col-12 form-group">
+										<label for="palika">Palika:</label>
+										<select id="t_palika" name="t_palika" class="form-control">
+											<option value="" selected>Select your palika</option>
+										</select>
+									</div>
+									
+									<!-- Temporary Ward Dropdown -->
+									<div class="col-12 form-group">
+										<label for="wada">Ward:</label>
+										<select id="t_wada" name="t_wada" class="form-control">
+											<option value="" selected>Select your ward</option>
+										</select>
+									</div>
+									
+									<!-- Temporary Tole Input -->
+									<div class="col-12 form-group">
+										<label for="t_tole">Tole:</label>
+										<input type="text" id="t_tole" name="t_tole" class="form-control" placeholder="Your tole">
+									</div>		
+											
+					
+								<div class="divider divider-border divider-center"><i class="icon-email2"></i></div> 
 
 								<div class="col-8 col-lg-auto">
 									<button type="submit" class="button button-reveal button-large button-circle text-right">
@@ -108,14 +192,12 @@
 
 	</div>
 	
-	<div id="gotoTop" class="icon-angle-up"></div>	
-
-    <div id="gotoTop" class="icon-angle-up"></div>
+	<div id="gotoTop" class="icon-angle-up"></div>   
 	
 	<script src="/static/js/jquery.js"></script>
 	<script src="/static/js/plugins.min.js"></script>
 	<script src="/static/js/functions.js"></script>
-	
+	<script src="/static/js/location.js"></script>
 
 </body>
 </html>

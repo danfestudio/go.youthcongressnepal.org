@@ -42,5 +42,5 @@ func Storage() (*minio.Client, error) {
 
     log.Printf("Successfully connected to MinIO and verified bucket %s", BucketName)
     
-    return minioClient, nil
+    return minioClient, nil    
 }
