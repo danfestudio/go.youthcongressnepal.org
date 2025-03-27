@@ -18,7 +18,7 @@ var err error
 func DB() (*mongo.Client, *mongo.Collection) {
 	if client == nil {
 		// MongoDB connection URI
-		uri := "mongodb+srv://chetanbudathoki:t4l0EkrUoWHCs03X@youthcongressnepal.h0q3w.mongodb.net/main?retryWrites=true&w=majority&appName=youthcongressnepal"
+		uri := "mongodb+srv://chetanbudathoki:t4l0EkrUoWHCs03X@youthcongressnepal.h0q3w.mongodb.net/?retryWrites=true&w=majority&appName=youthcongressnepal"
 
 		// Set up MongoDB client options
 		clientOptions := options.Client().ApplyURI(uri)
@@ -41,7 +41,7 @@ func DB() (*mongo.Client, *mongo.Collection) {
 		fmt.Println("Successfully connected to MongoDB!")
 
 		// Set the MongoDB collection
-		members = client.Database("cb").Collection("members")
+		members = client.Database("main").Collection("members")
 	}
 
 	// Return the client and collection for use in other parts of the app
