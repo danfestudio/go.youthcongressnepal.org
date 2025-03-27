@@ -20,11 +20,11 @@ jobs:
     - name: SSH to VPS and deploy
       uses: appleboy/ssh-action@v0.1.6
       with:
-        host: ${{ secrets.VPS_IP }}  
-        username: ${{ secrets.VPS_USER }} 
-        key: ${{ secrets.SSH_PRIVATE_KEY }}  
+        host: ${{ secrets.HOST }}  
+        username: ${{ secrets.USER }} 
+        key: ${{ secrets.PRIVATE_KEY }}  
         port: 22  
-        
+
         script: |
           cd /home/cb/project/danfelabs/youthcongressnepal
           docker-compose down || true
