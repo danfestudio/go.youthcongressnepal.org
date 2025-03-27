@@ -12,11 +12,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Build Docker image
-      run: |
-        docker build -t youthcongressnepal .
-
+ 
     - name: SSH to VPS and deploy
       uses: appleboy/ssh-action@v0.1.6
       with:
@@ -27,5 +23,10 @@ jobs:
 
         script: |
           cd /home/cb/projects/danfelabs/youthcongressnepal
-          docker-compose down || true
-          docker-compose up -d --build
+
+          docker rm -f youthcongressnepal.org || true
+          docker rmi youthcongressnepal || true
+
+          docker build -t youthcongressnepal .
+          docker run -d --name youthcongressnepal.org -p 8001:8001 youthcongressnepal
+          
