@@ -19,5 +19,5 @@ func StartServer() {
 	app.Static("/assets", "./assets")	
 	
 	// Start the server
-	app.Listen(":3000")
+	app.Listen(":8001")
 }

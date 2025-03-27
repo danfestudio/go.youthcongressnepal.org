@@ -1,0 +1,31 @@
+name: Deploy to VPS using Docker
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: |
+        docker build -t youthcongressnepal .
+
+    - name: SSH to VPS and deploy
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.VPS_IP }}  
+        username: ${{ secrets.VPS_USER }} 
+        key: ${{ secrets.SSH_PRIVATE_KEY }}  
+        port: 22  
+        
+        script: |
+          cd /home/cb/project/danfelabs/youthcongressnepal
+          docker-compose down || true
+          docker-compose up -d --build

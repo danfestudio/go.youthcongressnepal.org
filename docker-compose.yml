@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  web:
+    image: youthcongressnepal  
+    container_name: youthcongressnepal.org
+    ports:
+      - "8001:8001"
+    restart: always
