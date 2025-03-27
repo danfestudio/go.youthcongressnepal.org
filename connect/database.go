@@ -18,7 +18,7 @@ var err error
 func DB() (*mongo.Client, *mongo.Collection) {
 	if client == nil {
 		// MongoDB connection URI
-		uri := "mongodb+srv://chetanbudathoki:HeroBudathoki3579@chetanbudathoki.ko2ln.mongodb.net/cb?retryWrites=true&w=majority&appName=chetanbudathoki"
+		uri := "mongodb+srv://chetanbudathoki:t4l0EkrUoWHCs03X@youthcongressnepal.h0q3w.mongodb.net/main?retryWrites=true&w=majority&appName=youthcongressnepal"
 
 		// Set up MongoDB client options
 		clientOptions := options.Client().ApplyURI(uri)

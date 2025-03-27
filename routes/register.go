@@ -75,7 +75,7 @@ func RegisterForm(c *fiber.Ctx) error {
 		log.Printf("error inserting user: %v", err)
 		return c.Status(fiber.StatusInternalServerError).SendString("Failed to register user.")
 	}
-
-	// Return success response
-	return c.SendString("User registered successfully!")
+	
+	return c.Status(fiber.StatusOK).SendString("User registered successfully.")
 }
+
