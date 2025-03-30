@@ -8,10 +8,13 @@ import (
 func Routes(app *fiber.App) {
 
 	app.Get("/", routes.Index)
-
-	app.Get("/register", routes.Register)
-	app.Post("/register", routes.RegisterForm)
+	app.Get("/about", routes.About)
+	app.Get("/faqs", routes.FAQs)
+	app.Get("/contact", routes.Contact)	
 
 	app.Get("/login", routes.Login)
+	app.Get("/register", routes.Register)
+	app.Post("/register", routes.RegisterForm)
+	app.Get("/congratulation", routes.Congratulation)	
 	
 }

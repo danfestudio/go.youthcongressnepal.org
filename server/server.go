@@ -5,12 +5,11 @@ import (
 	"github.com/gofiber/template/html/v2"
 )
 
-func StartServer() {
+func StartServer() {	
 	
-	// Initialize Fiber with the HTML template engine
 	engine := html.New("./public", ".html")
 	app := fiber.New(fiber.Config{
-		Views: engine, // Set the template engine
+		Views: engine, 
 	})
 
 	Routes(app)
@@ -18,6 +17,5 @@ func StartServer() {
 	app.Static("/static", "./static")
 	app.Static("/assets", "./assets")	
 	
-	// Start the server
 	app.Listen(":8001")
 }

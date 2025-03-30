@@ -15,7 +15,7 @@ const (
     accessKeyID     = "HTkDFKvkz7grU3qIPgDk"     // Replace with your access key
     secretAccessKey = "cJwK85jmHarjY5K78SuVcm5qVIswKRcpubGHqC0z"     // Replace with your secret key
     useSSL          = false            // Set to true if using SSL/TLS
-	BucketName      = "chetanbudathoki" // Your bucket name
+	BucketName      = "youthcongressnepal" // Your bucket name
 )
 
 func Storage() (*minio.Client, error) {

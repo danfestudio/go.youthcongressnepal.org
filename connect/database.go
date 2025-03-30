@@ -47,3 +47,4 @@ func DB() (*mongo.Client, *mongo.Collection) {
 	// Return the client and collection for use in other parts of the app
 	return client, members
 }
+

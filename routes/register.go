@@ -119,7 +119,7 @@ func RegisterForm(c *fiber.Ctx) error {
             apiKey := "8EB4212649769CADB2CE340DD3FB2026"
             campaign := "youthcongressnepal"
             routeID := "SI_Alert"
-            msg := fmt.Sprintf("Thank you for registering with Youth Congress Nepal. Your OTP is: %s", otp)
+            msg := fmt.Sprintf("Thank you for registering with Youth Congress Nepal. Your OTP for mobile number verification is: %s.  - Youth Congress Nepal | Communication Department", otp)
 
             data := url.Values{
                 "key":      {apiKey},
@@ -165,7 +165,6 @@ func RegisterForm(c *fiber.Ctx) error {
 	    }
 	}
 
-	// If OTP is not provided, handle it accordingly
-	return c.SendString("Please enter the OTP to proceed.")       
+	return c.Redirect("/congratulation")      
    
 }
