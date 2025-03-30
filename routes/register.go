@@ -33,9 +33,7 @@ func GenerateOTP() string {
 	return fmt.Sprintf("%d", otp)    // Convert the OTP to a string
 }
 
-
 func RegisterForm(c *fiber.Ctx) error {
-
     // Create a session object
 	sess, err := store.Get(c)
 	if err != nil {
@@ -73,7 +71,6 @@ func RegisterForm(c *fiber.Ctx) error {
             log.Printf("Error hashing password: %v", err)
             return c.Status(fiber.StatusInternalServerError).SendString("Failed to hash password.")
         }
-      
 
         // Prepare the user data for insertion, including the hashed password and address fields
         membersData := bson.M{
@@ -147,24 +144,23 @@ func RegisterForm(c *fiber.Ctx) error {
         return c.Redirect("/register?submitted=true")
     }
 
-        // Handle Form 2 submission (Update OTP)
-	// Handle Form 2 submission (Update OTP)
-	if c.FormValue("otp") != "" {
-	    enteredOTP := c.FormValue("otp")
+    // Handle Form 2 submission (Update OTP)
+    if c.FormValue("otp") != "" {
+        enteredOTP := c.FormValue("otp")
 
-	    // Retrieve OTP from session
-	    sessionOTP := sess.Get("otp").(string)
+        // Retrieve OTP from session
+        sessionOTP := sess.Get("otp").(string)
 
-	    // Compare the entered OTP with the OTP stored in session (both are strings)
-	    if enteredOTP == sessionOTP {
-	        log.Printf("OTP match successful. Proceeding with registration.")
-	        return c.SendString("OTP verified successfully. Proceeding with registration.")
-	    } else {
-	        log.Printf("OTP mismatch. Please try again.")
-	        return c.SendString("Invalid OTP. Please try again.")
-	    }
-	}
+        // Compare the entered OTP with the OTP stored in session (both are strings)
+        if enteredOTP == sessionOTP {
+            log.Printf("OTP match successful. Proceeding with registration.")
+            return c.SendString("OTP verified successfully. Proceeding with registration.")
+        } else {
+            log.Printf("OTP mismatch. Please try again.")
+            return c.SendString("Invalid OTP. Please try again.")
+        }
+    }
 
-	return c.Redirect("/congratulation")      
-   
+    // Redirect to the congratulation page after successful OTP verification
+    return c.Redirect("/congratulation")
 }

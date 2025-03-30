@@ -1,1 +1,2 @@
-# youthcongressnepal
+docker build -t youthcongressnepal .
+docker run -d -p 8002:8002 --name youthcongressnepal.org youthcongressnepal

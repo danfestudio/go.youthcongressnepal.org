@@ -2,7 +2,7 @@
 	"name": "youthcongressnepal",	
 	"image": "alpine:3.21.3",
 	"remoteUser": "root",
-	"postCreateCommand": "/bin/sh /workspaces/youthcongressnepal/.devcontainer/setup.sh",
+	"postCreateCommand": "/bin/sh /workspaces/youthcongressnepal.org/.devcontainer/setup.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [
