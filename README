@@ -1,2 +1,5 @@
 docker build -t youthcongressnepal .
-docker run -d -p 8002:8002 --name youthcongressnepal.org youthcongressnepal
+docker run -d -p 8001:8001 --name youthcongressnepal.org youthcongressnepal
+
+git config --global user.email "chetanbudathoki@outlook.com"
+git config --global user.name "Chetan Budathoki"

@@ -3,5 +3,5 @@ RUN apk add --no-cache go git
 WORKDIR /app
 COPY . .
 RUN go build -o main main.go
-EXPOSE 8002
+EXPOSE 8001
 CMD ["./main"]

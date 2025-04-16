@@ -17,5 +17,5 @@ func StartServer() {
 	app.Static("/static", "./static")
 	app.Static("/assets", "./assets")	
 	
-	app.Listen(":8002")
+	app.Listen(":8001")
 }
